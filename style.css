@@ -1,0 +1,301 @@
+/* Starry night animation background */
+@import "compass/reset";
+
+.stars, .twinkling, .clouds {
+	position:absolute;
+	display:block;
+	top:0; bottom:0;
+	left:0; right:0;
+	width:100%; height:100%;
+}
+
+.stars {
+	z-index: 0;
+	background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+}
+
+.twinkling{
+	z-index: 1;
+	background:transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
+	animation: move-twink-back 200s linear infinite;
+}
+
+.clouds{
+	z-index: 2;
+    background:transparent url('https://image.ibb.co/bT4N7T/clouds.png') repeat top center;
+	animation: move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+	from {background-position:0 0;}
+	to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+	from {background-position:0 0;}
+	to {background-position:10000px 0;}
+}
+
+
+
+
+
+/* My photo at top */
+.myphotocontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  /* background: rgb(43, 255, 0); */
+}
+
+/* Star shape of my photo */
+.image4 {
+  margin: 10px;
+  clip-path: polygon(50% 0%, 65% 30%, 100% 30%, 75% 55%, 85% 100%, 50% 70%, 15% 100%, 25% 55%, 0% 30%, 35% 30%);
+  animation: clipUp4 7s;
+  /* Or infinite unfolding as below */
+  /* animation: clipUp4 7s infinite; */
+}
+
+/* 
+  A diamond shape 
+  .image4 {
+    margin: 10px;
+    clip-path: polygon(50% 0%, 80% 50%, 50% 100%, 20% 50%);
+    animation: clipUp6 4s infinite;
+  } */
+
+/* rising star path */
+/* @keyframes clipUp4 {
+    from {
+      clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    }
+  } */
+
+/* unfolding the star */
+@keyframes clipUp4 {
+  from {
+    clip-path: polygon(25% 25%, 50% 50%, 75% 75%, 25% 25%, 50% 50%, 75% 75%, 25% 25%, 50% 50%, 75% 75%, 100% 100%);
+  }
+}
+
+ 
+
+
+/* my name   Katie Wong    progressive color ants moving effect */
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.nameBox {
+  height: 38%;
+  font-weight: 800;
+  /* background: color nameBox will not merge with starry night */
+  /* background: rgb(43, 255, 0); */
+  font-family: Arial;
+  /* I added align-content to center my name  */
+  align-content: center;
+}
+
+svg {
+  display: block;
+  font: 10.5em 'Montserrat';
+  /* width: 960px; */
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #4D163D;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #840037;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #BD0034;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #BD0034;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #FDB731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+} 
+
+
+
+
+/* arrow to scroll down */
+.arrow {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 5px solid rgb(243, 83, 9);
+  border-right: 5px solid rgb(199, 67, 7);
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+} 
+
+
+
+/* For Welcome to my website */
+h2 {
+  background-color: rgb(68, 68, 68);
+  font-size: 20pt;
+  text-align: center;
+  color: rgb(255, 49, 49);
+  text-transform: uppercase;
+  padding: 3px;
+}
+
+
+
+
+.parallax {
+  background-image: url("https://miro.medium.com/max/700/1*W5dYt-yXX8EXdgpXGdmMHQ.gif");
+
+  /* Set a specific height */
+  min-height: 600px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 78%;
+}
+
+
+
+
+/* page 2    ABOUT ME.  This version has a white line on top */
+/* .page2 {
+  background-color: rgb(107, 206, 61); 
+  text-align: center;
+} */
+
+
+
+/* This h3 is for page 2  */
+h3 {
+  color: rgb(185, 185, 185);
+  font-size: 15pt;
+}
+
+
+
+
+/* project view link blinking */
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+
+.project {
+  font-size: calc(3px + 3vh);
+  line-height: calc(3px + 3vh);
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 3s infinite;
+  -webkit-animation: blink 3s infinite;
+}
+
+@-webkit-keyframes blink {
+
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+
+}
+
+@keyframes blink {
+
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+  
+}
+
